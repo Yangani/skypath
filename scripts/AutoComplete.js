@@ -1,13 +1,3 @@
-//Auto complete airport names and codes 
-//Listen for DOM input text
-$(document).ready(function() {
-    $(".autocomplete").autocomplete({
-        source: autocompleteSearch,
-        minLength: 2
-    });
-});
-
-
 //Autcomplete search Airport data
 function autocompleteSearch(request, response) {
     var searchTerm = request.term.toLowerCase();
@@ -24,3 +14,13 @@ function autocompleteSearch(request, response) {
         }
     }));
 }
+
+
+//Auto complete airport names and codes 
+//Listen for DOM input text
+$(document).ready(function() {
+    $(".autocomplete").autocomplete({
+        source: autocompleteSearch,
+        minLength: 2
+    });
+});

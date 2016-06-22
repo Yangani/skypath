@@ -1,6 +1,6 @@
 //Calculate distance between the two airports
 //Aero API KEY
-var key = '2f11c538b74cc78a54e01e7137f2bc6e';
+var key = 'AERO_API_KEY';
 //API Request validator
 var airportApiReq = false;
 //Validate Airport
@@ -31,24 +31,6 @@ function validateAirportCode(airport, key) {
     });
 }
 
-
-
-//Calaculate airport distances
-function displayDistanceData(departureAirport, destinationAirport, key) {
-    $.ajax({
-        type: 'GET',
-        url: "https://airport.api.aero/airport/distance/" + departureAirport + "/" + destinationAirport + "?user_key=" + key,
-        dataType: "jsonp",
-        success: function(parsed_json) {
-            var distance = parsed_json['distance'].replace(",", "");
-            var unit = parsed_json['unit'];
-            var distanceMiles = Math.round(parseInt(distance) / 1.852);
-            $('#distance').html(distanceMiles + " nautical miles");
-            getAirportLngLat(departureAirportData, destinationAirportData, key);
-        }
-    });
-}
-
 //Calculate airport location coordinates
 function getAirportLngLat(airportA, airportB, key) {
     $.ajax({
@@ -70,6 +52,24 @@ function getAirportLngLat(airportA, airportB, key) {
         }
     });
 }
+
+
+//Calaculate airport distances
+function displayDistanceData(departureAirport, destinationAirport, key) {
+    $.ajax({
+        type: 'GET',
+        url: "https://airport.api.aero/airport/distance/" + departureAirport + "/" + destinationAirport + "?user_key=" + key,
+        dataType: "jsonp",
+        success: function(parsed_json) {
+            var distance = parsed_json['distance'].replace(",", "");
+            var unit = parsed_json['unit'];
+            var distanceMiles = Math.round(parseInt(distance) / 1.852);
+            $('#distance').html(distanceMiles + " nautical miles");
+            getAirportLngLat(departureAirportData, destinationAirportData, key);
+        }
+    });
+}
+
 
 //Dom interaction
 $(document).ready(function() {
