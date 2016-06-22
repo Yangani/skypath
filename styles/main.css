@@ -1,0 +1,62 @@
+body {
+    background-image: url("background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+    border-color: #E7E7E7;
+    margin: 0;
+}
+
+h3 {
+    margin-left: 112px;
+}
+
+
+.container {
+    margin: 0 auto;
+}
+
+.search-legend {
+	text-align: center;
+}
+
+.form-group {
+	text-align: left;
+}
+
+.air-distance {
+    text-align: center;
+    color: "#000000";
+}
+
+html,
+body,
+#map-canvas {
+    height: 100%;
+}
+
+#map-render {
+    width: 100%;
+    height: 50%;
+    text-align: center
+}
+
+#map-canvas {
+    width: 80%;
+    height: 100%;
+    margin: 0px auto;
+    display: inline-block;
+}
+
+#distance {
+    font-size: 150%;
+    padding-bottom: 10px;
+}
+
+.container p {
+    font-size: 100%;
+}
