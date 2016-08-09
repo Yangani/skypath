@@ -18,7 +18,6 @@ function validateAirportCode(airport, key) {
         url: "https://airport.api.aero/airport/" + airport + "?user_key=" + key,
         dataType: "jsonp",
         success: function(parsed_json) {
-            console.log("Hey man")
             var airportOneSearch = parsed_json['success'];
             var errorMsg = parsed_json['errorMessage'];
             validAirport = true;
